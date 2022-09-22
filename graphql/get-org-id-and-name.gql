@@ -1,0 +1,6 @@
+query GetOrgIdAndName {
+    orgs {
+      id
+      name
+    }
+  }

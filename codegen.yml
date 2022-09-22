@@ -1,0 +1,17 @@
+generates:
+    ./graphql/_generated.tsx:
+        schema: "./graphql/schema.graphql"
+        documents: ['./graphql/*.gql']
+        plugins:
+            - typescript
+            - typescript-operations
+            - typescript-react-apollo
+            - typescript-resolvers
+            - typescript-apollo-client-helpers
+        config:
+            reactApolloVersion: 3
+            overwrite: true
+            withComponent: false
+            withHOC: false
+            withHooks: true
+            
