@@ -1,16 +1,20 @@
-import { MockedProvider } from '@apollo/client/testing'; 
-import { InMemoryCache } from '@apollo/client';
+import { MockedProvider } from "@apollo/client/testing";
+import { InMemoryCache } from "@apollo/client";
 
 export const parameters = {
-   apolloClient: {
+  apolloClient: {
     MockedProvider,
+    defaultOptions: {
+      watchQuery: { fetchPolicy: "no-cache" },
+      query: { fetchPolicy: "no-cache" },
+    },
     cache: new InMemoryCache({
       typePolicies: {
         Organisation: {
-            keyFields: ["id"]
+          keyFields: ["id"],
         },
-    }
-    })
+      },
+    }),
   },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -19,4 +23,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
