@@ -1,9 +1,9 @@
 query GetOrgIdSuborg {
-    orgs {
+  orgs {
+    id
+    subOrg {
+      name
       id
-      subOrg {
-        name
-        id
-      }
     }
   }
+}

@@ -7,11 +7,8 @@ export function App() {
   if(loading || subOrgLoading) {
     return "loading";
   }
-  if(error) {
-    return error.toString();
-  }
-  if(subOrgError) {
-    return subOrgError.toString();
+  if(error ?? subOrgError) {
+    return (error ?? subOrgError).toString();
   }
   
   return (
